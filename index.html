@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
             background-color: #181818;
             color: #D2D2D2;
             line-height: 1.6;
@@ -43,343 +43,514 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: 900;
             color: #D2D2D2;
-            letter-spacing: -0.02em;
             text-decoration: none;
+            letter-spacing: 0.46px;
         }
 
         .logo img {
-            width: 32px;
-            height: 32px;
+            width: 44px;
+            height: 48px;
         }
 
         .header-download-btn {
             display: flex;
             align-items: center;
-            gap: 8px;
-            background-color: #FD3F33;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
+            gap: 4px;
+            background-color: #D0460B;
+            color: #FFF;
+            padding: 16px 20px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.38px;
             transition: all 0.3s ease;
         }
 
         .header-download-btn:hover {
-            background-color: #e63329;
-            transform: translateY(-1px);
+            background-color: #B53E0A;
+            transform: translateY(-2px);
         }
 
         .header-download-btn img {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 0 120px;
+            padding: 80px 0;
             text-align: center;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 800;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            letter-spacing: 0.38px;
         }
 
-        .hero-title .highlight {
-            color: #66E069;
+        .hero-title .accent {
+            color: #D0460B;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            color: #6D6D6D;
-            margin-bottom: 50px;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 80px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .download-button {
-            display: inline-block;
-            background-color: #222222;
-            color: #D2D2D2;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 1px solid #323232;
-        }
-
-        .download-button:hover {
-            background-color: #323232;
-            transform: translateY(-2px);
+            line-height: 1.33;
+            letter-spacing: 0.38px;
         }
 
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background-color: #1D1D1D;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-top: 80px;
+            padding: 80px 0;
         }
 
         .feature {
+            display: flex;
+            align-items: center;
+            gap: 77px;
+            margin-bottom: 120px;
+        }
+
+        .feature:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-content {
+            flex: 1;
+            max-width: 345px;
+        }
+
+        .feature-title {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: 0.38px;
+            line-height: normal;
+        }
+
+        .feature-description {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.33;
+            letter-spacing: 0.38px;
+        }
+
+        .feature-image {
+            flex-shrink: 0;
+            width: 288px;
+            height: 567px;
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Game Modes Section */
+        .game-modes {
+            padding: 80px 0;
             text-align: center;
         }
 
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background-color: #222222;
-            border-radius: 20px;
-            margin: 0 auto 30px;
+        .section-title {
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: 0.38px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 80px;
+            letter-spacing: 0.38px;
+            line-height: 1.33;
+        }
+
+        .game-modes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .game-mode {
+            background-color: #222;
+            border-radius: 32px;
+            padding: 40px;
+            height: 420px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            border: 1px solid #323232;
+            position: relative;
+            overflow: hidden;
         }
 
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #D2D2D2;
+        .game-mode-phone {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 230px;
+            height: 454px;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .feature p {
-            color: #6D6D6D;
-            font-size: 1rem;
-            line-height: 1.7;
+        .game-mode-phone img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Game Modes */
-        .game-modes {
-            padding: 100px 0;
+        .game-mode-content {
+            flex: 1;
+            text-align: left;
+            max-width: 345px;
         }
 
-        .modes-grid {
+        .game-mode-title {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: 0.38px;
+            line-height: normal;
+        }
+
+        .game-mode-description {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.33;
+            letter-spacing: 0.38px;
+        }
+
+        /* Premium Features */
+        .premium-features {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .premium-intro {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 80px;
+            letter-spacing: 0.38px;
+            line-height: 1.33;
+        }
+
+        .premium-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            margin-top: 60px;
-        }
-
-        .mode-card {
-            background-color: #222222;
-            padding: 40px 30px;
-            border-radius: 16px;
-            border: 1px solid #323232;
-            transition: transform 0.3s ease;
-        }
-
-        .mode-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .mode-card h3 {
-            color: #66E069;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .mode-card p {
-            color: #6D6D6D;
-            line-height: 1.6;
-        }
-
-        .premium-badge {
-            display: inline-block;
-            background-color: #D0460B;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        /* Premium Section */
-        .premium {
-            padding: 100px 0;
-            background-color: #1D1D1D;
-            text-align: center;
-        }
-
-        .premium-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            margin-bottom: 80px;
         }
 
         .premium-feature {
-            padding: 30px 20px;
-            background-color: #222222;
-            border-radius: 12px;
-            border: 1px solid #323232;
+            background-color: #222;
+            border-radius: 32px;
+            padding: 40px;
+            height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .premium-feature h4 {
-            color: #66E069;
-            margin-bottom: 10px;
+        .premium-feature-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 6px;
+            letter-spacing: 0.38px;
+            line-height: normal;
         }
 
-        .trial-banner {
-            background: linear-gradient(135deg, #66E069, #4CAF50);
-            color: #181818;
-            padding: 30px;
-            border-radius: 16px;
-            margin-top: 60px;
-        }
-
-        .trial-banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .trial-banner p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Section Headers */
-        .section-header {
+        .premium-feature-description {
+            font-size: 20px;
+            font-weight: 400;
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #D2D2D2;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #6D6D6D;
-            max-width: 600px;
-            margin: 0 auto;
+            line-height: normal;
+            letter-spacing: -0.31px;
+            max-width: 289px;
         }
 
         /* Footer */
         footer {
             padding: 80px 0 40px;
             text-align: center;
-            border-top: 1px solid #323232;
-        }
-
-        .footer-content {
-            margin-bottom: 40px;
-        }
-
-        .footer-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #D2D2D2;
-        }
-
-        .footer-content p {
-            color: #6D6D6D;
-            margin-bottom: 30px;
         }
 
         .footer-links {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.38px;
+            line-height: 1.33;
+        }
+
+        .footer-copyright {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 0.38px;
+            line-height: 1.33;
+        }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .cta-button {
             display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-links a {
-            color: #6D6D6D;
+            align-items: center;
+            gap: 4px;
+            background-color: #D0460B;
+            color: #FFF;
+            padding: 16px 20px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.38px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(208, 70, 11, 0.3);
         }
 
-        .footer-links a:hover {
-            color: #66E069;
+        .cta-button:hover {
+            background-color: #B53E0A;
+            transform: translateY(-2px);
         }
 
-        .copyright {
-            color: #6D6D6D;
-            font-size: 0.9rem;
+        .cta-button img {
+            width: 24px;
+            height: 24px;
         }
 
-        /* Responsive */
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .feature {
+                gap: 40px;
+            }
+
+            .feature-image {
+                width: 240px;
+                height: 480px;
+            }
+
+            .game-mode-phone {
+                width: 200px;
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
             }
-            
+
             .header-content {
                 flex-direction: column;
                 gap: 20px;
-                text-align: center;
             }
-            
+
             .logo {
-                font-size: 1.3rem;
+                font-size: 20px;
             }
-            
+
             .header-download-btn {
-                font-size: 0.9rem;
-                padding: 10px 16px;
+                font-size: 18px;
+                padding: 14px 18px;
             }
-            
+
             .hero {
-                padding: 60px 0 80px;
-            }
-            
-            .features, .game-modes, .premium {
                 padding: 60px 0;
             }
-            
-            .hero-title {
-                font-size: 2.5rem;
+
+            .hero-subtitle {
+                font-size: 20px;
+                margin-bottom: 60px;
             }
-            
-            .footer-links {
+
+            .features {
+                padding: 60px 0;
+            }
+
+            .feature {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .feature-title {
+                font-size: 32px;
+            }
+
+            .feature-description {
+                font-size: 20px;
+            }
+
+            .feature-image {
+                width: 200px;
+                height: 400px;
+            }
+
+            .game-modes {
+                padding: 60px 0;
+            }
+
+            .game-modes-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .game-mode {
+                height: auto;
+                padding: 30px;
                 flex-direction: column;
-                gap: 20px;
+                text-align: center;
+            }
+
+            .game-mode-phone {
+                position: relative;
+                right: 0;
+                top: 0;
+                transform: none;
+                width: 180px;
+                height: 360px;
+                margin-top: 20px;
+            }
+
+            .game-mode-content {
+                text-align: center;
+                max-width: none;
+            }
+
+            .game-mode-title {
+                font-size: 28px;
+            }
+
+            .game-mode-description {
+                font-size: 18px;
+            }
+
+            .premium-features {
+                padding: 60px 0;
+            }
+
+            .premium-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .premium-feature {
+                height: auto;
+                padding: 30px;
+            }
+
+            .premium-feature-title {
+                font-size: 20px;
+            }
+
+            .premium-feature-description {
+                font-size: 18px;
+            }
+
+            .footer-links {
+                font-size: 18px;
+            }
+
+            .footer-copyright {
+                font-size: 18px;
+            }
+
+            .bottom-cta {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 40px auto 0;
+                text-align: center;
             }
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-subtitle {
+                font-size: 18px;
+            }
+
+            .feature-title {
+                font-size: 24px;
+            }
+
+            .feature-description {
+                font-size: 16px;
+            }
+
+            .game-mode-title {
+                font-size: 22px;
+            }
+
+            .game-mode-description {
+                font-size: 16px;
+            }
+
+            .premium-intro {
+                font-size: 18px;
+            }
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Hero Image */
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto 80px;
+            border-radius: 32px;
+            overflow: hidden;
         }
 
-        .hero, .feature, .mode-card {
-            animation: fadeInUp 0.8s ease-out;
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Tagline at bottom */
+        .tagline {
+            text-align: center;
+            margin: 80px 0;
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 900;
+            letter-spacing: 0.38px;
+            line-height: 1.2;
         }
     </style>
 </head>
@@ -402,41 +573,44 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero-title">
-                    Learn flags<br>
-                    the <span class="highlight">fun way</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Master world flags with daily challenges, swipeable cards, and engaging gameplay. Start your geography journey today!
-                </p>
-                <a href="#" class="download-button">📱 Download for iOS</a>
+                <h1 class="hero-title">Learn flags the <span class="accent">fun way!</span></h1>
+                <p class="hero-subtitle">Master world flags with daily challenges, swipeable cards, and engaging gameplay.</p>
             </div>
         </section>
 
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop&crop=center" alt="Flagopedia App Interface">
+        </div>
+
         <section class="features">
             <div class="container">
-                <div class="section-header">
-                    <h2>Daily Flag Discovery</h2>
-                    <p>Build a consistent learning habit in just 5 minutes a day</p>
+                <div class="feature">
+                    <div class="feature-content">
+                        <h2 class="feature-title">5 Flags Daily</h2>
+                        <p class="feature-description">Learn 5 new flags every day with beautiful swipeable cards. Never run out of content with 189 country flags to discover.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=600&fit=crop&crop=center" alt="Daily flags feature">
+                    </div>
                 </div>
-                
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">📅</div>
-                        <h3>5 Flags Daily</h3>
-                        <p>Learn 5 new flags every day with beautiful swipeable cards. Never run out of content with 189 country flags to discover.</p>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h2 class="feature-title">Explore Continents</h2>
+                        <p class="feature-description">Browse flags organized by continent. Start with Asia (free) and unlock all 7 continents with premium.</p>
                     </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">🌍</div>
-                        <h3>Explore Continents</h3>
-                        <p>Browse flags organized by continent. Start with Asia (free) and unlock all 7 continents with premium.</p>
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=600&fit=crop&crop=center" alt="Continents feature">
                     </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Quick & Easy</h3>
-                        <p>No account required - start learning immediately. Clean, modern interface designed specifically for iOS.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-content">
+                        <h2 class="feature-title">Quick & Easy</h2>
+                        <p class="feature-description">No account required - start learning immediately. Clean, modern interface designed specifically for iOS.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=600&fit=crop&crop=center" alt="Quick and easy feature">
                     </div>
                 </div>
             </div>
@@ -444,73 +618,75 @@
 
         <section class="game-modes">
             <div class="container">
-                <div class="section-header">
-                    <h2>Two Engaging Game Modes</h2>
-                    <p>Choose your challenge level and test your flag knowledge</p>
-                </div>
-                
-                <div class="modes-grid">
-                    <div class="mode-card">
-                        <h3>🎯 Normal Mode</h3>
-                        <p>See a flag, choose from 2 countries. Perfect for beginners and building confidence with world flags.</p>
+                <h2 class="section-title">Two engaging game modes</h2>
+                <p class="section-subtitle">Choose your challenge level and test your flag knowledge</p>
+
+                <div class="game-modes-container">
+                    <div class="game-mode">
+                        <div class="game-mode-content">
+                            <h3 class="game-mode-title">Normal Mode</h3>
+                            <p class="game-mode-description">See a flag, choose from 2 countries. Perfect for beginners and building confidence with world flags.</p>
+                        </div>
+                        <div class="game-mode-phone">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=230&h=454&fit=crop&crop=center" alt="Normal mode gameplay">
+                        </div>
                     </div>
-                    
-                    <div class="mode-card">
-                        <h3>💪 Difficult Mode <span class="premium-badge">Premium</span></h3>
-                        <p>Type the country name and challenge your memory. Test your true flag knowledge without hints.</p>
+
+                    <div class="game-mode">
+                        <div class="game-mode-content">
+                            <h3 class="game-mode-title">Difficult Mode</h3>
+                            <p class="game-mode-description">Type the country name and challenge your memory. Test your true flag knowledge without hints.</p>
+                        </div>
+                        <div class="game-mode-phone">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=230&h=454&fit=crop&crop=center" alt="Difficult mode gameplay">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="premium-intro">Get the complete Flagopedia experience with premium features</p>
+            </div>
+        </section>
+
+        <section class="premium-features">
+            <div class="container">
+                <div class="premium-grid">
+                    <div class="premium-feature">
+                        <h3 class="premium-feature-title">Ad-Free</h3>
+                        <p class="premium-feature-description">Remove all ads for uninterrupted learning</p>
+                    </div>
+
+                    <div class="premium-feature">
+                        <h3 class="premium-feature-title">All continents</h3>
+                        <p class="premium-feature-description">Access flags from all 7 continents</p>
+                    </div>
+
+                    <div class="premium-feature">
+                        <h3 class="premium-feature-title">Difficult mode</h3>
+                        <p class="premium-feature-description">Challenge yourself with typing mode</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="premium">
+        <div class="tagline">
             <div class="container">
-                <div class="section-header">
-                    <h2>Unlock Full Experience</h2>
-                    <p>Get the complete Flagopedia experience with premium features</p>
-                </div>
-                
-                <div class="premium-features">
-                    <div class="premium-feature">
-                        <h4>🚫 Ad-Free</h4>
-                        <p>Remove all ads for uninterrupted learning</p>
-                    </div>
-                    
-                    <div class="premium-feature">
-                        <h4>🌎 All Continents</h4>
-                        <p>Access flags from all 7 continents</p>
-                    </div>
-                    
-                    <div class="premium-feature">
-                        <h4>⚡ Difficult Mode</h4>
-                        <p>Challenge yourself with typing mode</p>
-                    </div>
-                </div>
-                
-                <div class="trial-banner">
-                    <h3>Start your 7-day FREE trial today!</h3>
-                    <p>Go premium with monthly or yearly plans. Cancel anytime.</p>
-                </div>
+                Designed with simplicity in mind, the app aims to helps users learn world flags through interactive gameplay, daily challenges, and continent-based exploration.
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <h3>Perfect for everyone</h3>
-                <p>Students • Travellers • Quiz lovers • Teachers • Geography enthusiasts</p>
-                <a href="#" class="download-button">📱 Download Flagopedia</a>
-            </div>
-            
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Support</a>
-            </div>
-            
-            <p class="copyright">© 2024 Flagopedia. Made for flag enthusiasts worldwide.</p>
+            <p class="footer-links">Privacy Policy • Terms of Service • Support</p>
+            <p class="footer-copyright">© 2025 Flagopedia. Made for flag enthusiasts worldwide.</p>
         </div>
     </footer>
+
+    <div class="bottom-cta">
+        <a href="#" class="cta-button">
+            <img src="assets/apple-logo.png" alt="Apple Logo">
+            Download on iOS
+        </a>
+    </div>
 </body>
 </html> 
