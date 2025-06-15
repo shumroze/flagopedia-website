@@ -29,22 +29,54 @@
 
         /* Header */
         header {
-            padding: 60px 0 100px;
-            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #323232;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #D2D2D2;
-            margin-bottom: 20px;
             letter-spacing: -0.02em;
+            text-decoration: none;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #6D6D6D;
-            margin-bottom: 60px;
+        .logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .header-download-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #FD3F33;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-download-btn:hover {
+            background-color: #e63329;
+            transform: translateY(-1px);
+        }
+
+        .header-download-btn img {
+            width: 20px;
+            height: 20px;
         }
 
         /* Hero Section */
@@ -296,6 +328,21 @@
                 padding: 0 15px;
             }
             
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .header-download-btn {
+                font-size: 0.9rem;
+                padding: 10px 16px;
+            }
+            
             .hero {
                 padding: 60px 0 80px;
             }
@@ -339,8 +386,16 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">🏁 Flagopedia</h1>
-            <p class="tagline">Master world flags daily</p>
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="assets/Logo.png" alt="Flagopedia Logo">
+                    Flagopedia
+                </a>
+                <a href="#" class="header-download-btn">
+                    <img src="assets/apple-logo.png" alt="Apple Logo">
+                    Download on iOS
+                </a>
+            </div>
         </div>
     </header>
 
