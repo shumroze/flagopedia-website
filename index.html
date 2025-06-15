@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flagopedia - Master World Flags Daily</title>
+    <meta name="description" content="Master world flags with Flagopedia - the daily flag learning app that makes geography fun! Learn 5 new flags every day.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background-color: #181818;
+            color: #D2D2D2;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 100px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #D2D2D2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #6D6D6D;
+            margin-bottom: 60px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 120px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title .highlight {
+            color: #66E069;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #6D6D6D;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #222222;
+            color: #D2D2D2;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid #323232;
+        }
+
+        .download-button:hover {
+            background-color: #323232;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: #1D1D1D;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #222222;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 1px solid #323232;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #D2D2D2;
+        }
+
+        .feature p {
+            color: #6D6D6D;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Game Modes */
+        .game-modes {
+            padding: 100px 0;
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .mode-card {
+            background-color: #222222;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid #323232;
+            transition: transform 0.3s ease;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mode-card h3 {
+            color: #66E069;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .mode-card p {
+            color: #6D6D6D;
+            line-height: 1.6;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background-color: #D0460B;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Premium Section */
+        .premium {
+            padding: 100px 0;
+            background-color: #1D1D1D;
+            text-align: center;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .premium-feature {
+            padding: 30px 20px;
+            background-color: #222222;
+            border-radius: 12px;
+            border: 1px solid #323232;
+        }
+
+        .premium-feature h4 {
+            color: #66E069;
+            margin-bottom: 10px;
+        }
+
+        .trial-banner {
+            background: linear-gradient(135deg, #66E069, #4CAF50);
+            color: #181818;
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 60px;
+        }
+
+        .trial-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .trial-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #D2D2D2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6D6D6D;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid #323232;
+        }
+
+        .footer-content {
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #D2D2D2;
+        }
+
+        .footer-content p {
+            color: #6D6D6D;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links a {
+            color: #6D6D6D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #66E069;
+        }
+
+        .copyright {
+            color: #6D6D6D;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 60px 0 80px;
+            }
+            
+            .features, .game-modes, .premium {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .feature, .mode-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">🏁 Flagopedia</h1>
+            <p class="tagline">Master world flags daily</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">
+                    Learn flags<br>
+                    the <span class="highlight">fun way</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Master world flags with daily challenges, swipeable cards, and engaging gameplay. Start your geography journey today!
+                </p>
+                <a href="#" class="download-button">📱 Download for iOS</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Daily Flag Discovery</h2>
+                    <p>Build a consistent learning habit in just 5 minutes a day</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">📅</div>
+                        <h3>5 Flags Daily</h3>
+                        <p>Learn 5 new flags every day with beautiful swipeable cards. Never run out of content with 189 country flags to discover.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Explore Continents</h3>
+                        <p>Browse flags organized by continent. Start with Asia (free) and unlock all 7 continents with premium.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Quick & Easy</h3>
+                        <p>No account required - start learning immediately. Clean, modern interface designed specifically for iOS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-modes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Two Engaging Game Modes</h2>
+                    <p>Choose your challenge level and test your flag knowledge</p>
+                </div>
+                
+                <div class="modes-grid">
+                    <div class="mode-card">
+                        <h3>🎯 Normal Mode</h3>
+                        <p>See a flag, choose from 2 countries. Perfect for beginners and building confidence with world flags.</p>
+                    </div>
+                    
+                    <div class="mode-card">
+                        <h3>💪 Difficult Mode <span class="premium-badge">Premium</span></h3>
+                        <p>Type the country name and challenge your memory. Test your true flag knowledge without hints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="premium">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Unlock Full Experience</h2>
+                    <p>Get the complete Flagopedia experience with premium features</p>
+                </div>
+                
+                <div class="premium-features">
+                    <div class="premium-feature">
+                        <h4>🚫 Ad-Free</h4>
+                        <p>Remove all ads for uninterrupted learning</p>
+                    </div>
+                    
+                    <div class="premium-feature">
+                        <h4>🌎 All Continents</h4>
+                        <p>Access flags from all 7 continents</p>
+                    </div>
+                    
+                    <div class="premium-feature">
+                        <h4>⚡ Difficult Mode</h4>
+                        <p>Challenge yourself with typing mode</p>
+                    </div>
+                </div>
+                
+                <div class="trial-banner">
+                    <h3>Start your 7-day FREE trial today!</h3>
+                    <p>Go premium with monthly or yearly plans. Cancel anytime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Perfect for everyone</h3>
+                <p>Students • Travellers • Quiz lovers • Teachers • Geography enthusiasts</p>
+                <a href="#" class="download-button">📱 Download Flagopedia</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+            </div>
+            
+            <p class="copyright">© 2024 Flagopedia. Made for flag enthusiasts worldwide.</p>
+        </div>
+    </footer>
+</body>
+</html> 
